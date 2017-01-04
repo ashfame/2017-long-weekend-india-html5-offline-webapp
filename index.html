@@ -1,0 +1,109 @@
+<!doctype html>
+<html manifest="html5offlinecache.manifest">
+<head>
+	<meta charset="utf-8">
+	<title>2017 Long Weekends</title>
+	
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+	<meta name="apple-mobile-web-app-title" content="2017">
+	<meta name="apple-touch-fullscreen" content="yes"/>
+
+	<link href="icon-57x57.png" rel="apple-touch-icon" />
+	<link href="icon-76x76.png" rel="apple-touch-icon" sizes="76x76" />
+	<link href="icon-120x120.png" rel="apple-touch-icon" sizes="120x120" />
+	<link href="icon-152x152.png" rel="apple-touch-icon" sizes="152x152" />
+	<link href="icon-180x180.png" rel="apple-touch-icon" sizes="180x180" />
+	<link href="icon-192x192.png" rel="icon" sizes="192x192" />
+	<link href="icon-120x120.png" rel="icon" sizes="128x128" />
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="2017 Long Weekends" />
+	<meta property="og:description" content="All long weekends of 2017 compiled together in a webapp, that you can add to your homescreen and use without internet access" />
+	<meta property="og:url" content="https://2017.ashfame.com/" />
+	<meta property="og:site_name" content="2017 Long Weekengs" />
+	<meta property="og:image" content="https://2017.ashfame.com/2017-long-weekends-banner.jpg" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:description" content="All long weekends of 2017 compiled together in a webapp, that you can add to your homescreen and use without internet access" />
+	<meta name="twitter:title" content="2017 Long Weekends" />
+	<meta name="twitter:site" content="@ashfame" />
+	<meta name="twitter:image" content="https://2017.ashfame.com/2017-long-weekends-banner.jpg" />
+
+</head>
+<body>
+	<h1>2017 Long Weekends</h1>
+	<div class="left">
+		<img src="images/1.gif"/>
+		<img src="images/3.gif"/>
+		<img src="images/6.gif"/>
+		<img src="images/9.gif"/>
+		<img src="images/12.gif"/>
+	</div>
+	<div class="right">
+		<img src="images/2.gif"/>
+		<img src="images/4.gif"/>
+		<img src="images/8.gif"/>
+		<img src="images/10.gif"/>
+	</div>
+	<p class="love">Compiled with ❤ for my love! &#x1f48b;</p>
+	<p class="why">I couldn't browse the slider on <a href="http://www.cntraveller.in/story/out-now-the-2017-long-weekends-list/">Condé Nast Traveller</a>, so I used their images to put this together in a webapp, that you can add to your homescreen and use without internet access - <a href="https://twitter.com/ashfame">@Ashfame</a></p>
+	<style>
+		.left, .right {
+			float: left;
+			width: 50%;
+		}
+		h1 {
+			text-align: center;
+		}
+		body {
+			font-family: fantasy;
+		}
+		img {
+			float: left;
+			width: 99%;
+			margin-bottom: 8px;
+		}
+		p {
+			clear: both;
+		}
+		.love {
+			background-color: bisque;
+			padding: 7px 10px 2px;
+		}
+		.why {
+			background-color: cornflowerblue;
+			padding: 9px 10px 5px;
+			color: #FFF;
+		}
+		a {
+			color: #FFF;
+		}
+	</style>
+	<script>
+	// Check if a new cache is available on page load.
+	window.addEventListener('load', function(e) {
+
+		// Attempt to update the user's cache.
+		window.applicationCache.update();
+
+		// Add listener
+		window.applicationCache.addEventListener('updateready', function(e) {
+			if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
+				// Browser downloaded a new app cache.
+				//if (confirm('A new version of this site is available. Load it?')) {
+					window.location.reload();
+				//}
+			} else {
+				// Manifest didn't changed. Nothing new to server.
+			}
+		}, false);
+
+	}, false);
+	</script>
+</body>
+</html>
